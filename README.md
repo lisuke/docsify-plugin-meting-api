@@ -1,6 +1,5 @@
 # docsify-plugin-meting-api
-
-[meting-api](https://github.com/topics/meting) plugin for [Docsify](https://docsify.js.org).
+A [docsify.js](https://docsify.js.org) plugin for [meting-api](https://github.com/topics/meting).
 
 ## Install
 

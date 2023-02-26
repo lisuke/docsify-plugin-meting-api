@@ -1,7 +1,7 @@
 {
     "name": "docsify-plugin-meting-api",
     "version": "1.0.0",
-    "description": "a docsify plugin for meting-api.",
+    "description": "A docsify.js plugin for meting-api.",
     "main": "src",
     "files": [
         "src",
