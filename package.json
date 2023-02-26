@@ -28,15 +28,15 @@
         "webpack-cli": "latest"
     },
     "directories": {
-        "demo": "demo"
+        "doc": "doc"
     },
     "scripts": {
         "build": "npm run build:dev && npm run build:prod",
-        "build:dev": "webpack ./src/index.js -o ./dist/ --output-filename docsify-plugin-meting-api.js --mode=development && webpack ./src/index.js -o ./demo/ --output-filename docsify-plugin-meting-api.js --mode=development",
+        "build:dev": "webpack ./src/index.js -o ./dist/ --output-filename docsify-plugin-meting-api.js --mode=development && webpack ./src/index.js -o ./doc/ --output-filename docsify-plugin-meting-api.js --mode=development",
         "build:prod": "webpack ./src/index.js -o ./dist/ --output-filename docsify-plugin-meting-api.min.js --mode=production",
-        "prettier:format": "npx prettier --write \"{,src/**/,demo/**/}*.{md,json,js,ts,html,css,scss,yml}\"",
-        "prettier:check": "npx prettier --list-different \"{,src/**/,demo/**/}*.{md,json,js,ts,html,css,scss,yml}\" ",
-        "demo": "npm run build && npx docsify serve demo --open",
+        "prettier:format": "npx prettier --write \"{,src/**/,doc/**/}*.{md,json,js,ts,html,css,scss,yml}\"",
+        "prettier:check": "npx prettier --list-different \"{,src/**/,doc/**/}*.{md,json,js,ts,html,css,scss,yml}\" ",
+        "doc": "npm run build && npx docsify serve doc --open",
         "lic-chk": "npx license-checker",
         "lib-chk": "npx ncu",
         "lib-chk-up": "npx ncu -u"

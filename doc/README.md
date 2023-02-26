@@ -48,7 +48,7 @@ window.$docsify = {
 ## Example
 
 1. Run `npm i`
-2. Run `npm run demo`
+2. Run `npm run doc`
 3. Go to [http://localhost:3000/](http://localhost:3000/)
 
 ## License
