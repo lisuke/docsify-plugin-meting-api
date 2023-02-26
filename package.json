@@ -1,0 +1,49 @@
+{
+    "name": "docsify-plugin-meting-api",
+    "version": "1.0.0",
+    "description": "a docsify plugin for meting-api.",
+    "main": "src",
+    "files": [
+        "src",
+        "dist",
+        "README.md"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lisuke/docsify-plugin-meting-api.git"
+    },
+    "author": "lisuke",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lisuke/docsify-plugin-meting-api/issues"
+    },
+    "homepage": "https://github.com/lisuke/docsify-plugin-meting-api#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "docsify-cli": "latest",
+        "license-checker": "latest",
+        "npm-check-updates": "latest",
+        "prettier": "latest",
+        "webpack": "latest",
+        "webpack-cli": "latest"
+    },
+    "directories": {
+        "demo": "demo"
+    },
+    "scripts": {
+        "build": "npm run build:dev && npm run build:prod",
+        "build:dev": "webpack ./src/index.js -o ./dist/ --output-filename docsify-plugin-meting-api.js --mode=development && webpack ./src/index.js -o ./demo/ --output-filename docsify-plugin-meting-api.js --mode=development",
+        "build:prod": "webpack ./src/index.js -o ./dist/ --output-filename docsify-plugin-meting-api.min.js --mode=production",
+        "prettier:format": "npx prettier --write \"{,src/**/,demo/**/}*.{md,json,js,ts,html,css,scss,yml}\"",
+        "prettier:check": "npx prettier --list-different \"{,src/**/,demo/**/}*.{md,json,js,ts,html,css,scss,yml}\" ",
+        "demo": "npm run build && npx docsify serve demo --open",
+        "lic-chk": "npx license-checker",
+        "lib-chk": "npx ncu",
+        "lib-chk-up": "npx ncu -u"
+    },
+    "keywords": [
+        "Docsify",
+        "APlayer",
+        "MetingAPI"
+    ]
+}

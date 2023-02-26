@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!-- Theme: Defaults -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css">
+
+    <!-- require APlayer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+
+    <!-- fixed APlayer -->
+    <style>
+        .aplayer-fixed,
+        .aplayer-body {
+            left: -66px !important;
+        }
+
+        .aplayer-fixed:hover,
+        .aplayer-body:hover {
+            left: 0px !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        window.$docsify = {
+            name: "docsify-plugin-meting-api",
+            repo: "https://github.com/lisuke/docsify-plugin-meting-api",
+            // require
+            MetingAPI: {
+                api: 'https://api.i-meto.com/meting/api',
+                playlists: [
+                    { server: 'netease', type: 'playlist', id: '7597958861' },
+                    { server: 'netease', type: 'playlist', id: '379025025' },
+                    { server: 'netease', type: 'playlist', id: '7383516738' },
+                ],
+            },
+        };
+    </script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <!-- docsify-themeable -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+
+    <!-- docsify-plugin-meting-api -->
+    <!-- required axios -->
+    <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="/docsify-plugin-meting-api.js"></script>
+
+</body>
+
+</html>
