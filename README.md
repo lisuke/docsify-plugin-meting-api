@@ -1,5 +1,4 @@
 # docsify-plugin-meting-api
-a docsify plugin for meting-api.
 
 [meting-api](https://github.com/topics/meting) plugin for [Docsify](https://docsify.js.org).
 
@@ -18,8 +17,8 @@ a docsify plugin for meting-api.
 ```html
     <!-- docsify-plugin-meting-api -->
     <!-- required axios -->
-    <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="/docsify-plugin-meting-api.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lisuke/docsify-plugin-meting-api/dist/docsify-plugin-meting-api.min.js"></script>
 ```
 
 ## Usage
@@ -55,7 +54,7 @@ window.$docsify = {
 
 ## License
 
-[MIT](LICENSE)
+[MIT license](LICENSE)
 
 ## TODO
 
