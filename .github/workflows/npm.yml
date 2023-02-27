@@ -1,20 +1,44 @@
 name: Build and Publish plugin
 on:
-  release:
-    types: [published]
+  push:
+    paths-ignore:
+      - 'LICENSE'
+
+
 jobs:
-  build:
+  Publish:
+    name: Publish
+    if: startsWith(github.ref, 'refs/tags')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
+
       - name: Install dependencies and build 🔧
-        run: npm ci
+        run: |
+          jq '.version="'$(git describe --tags)'"' package.json > package.json.new
+          mv package.json.new package.json
+          npm i
+
+      - name: Upload to Github
+        if: startsWith(github.ref, 'refs/tags')
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.TOKEN }}
+          file: dist/*
+          tag: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
+      
       - name: Publish on NPM 📦
         run: npm publish
         env:
