@@ -24,7 +24,7 @@ jobs:
 
       - name: Install dependencies and build 🔧
         run: |
-          TAG=$(git describe --tags)
+          TAG=$(echo ${{ github.ref }} | rev | cut -d/ -f1 | rev)
           echo "TAG=${TAG}" >> $GITHUB_ENV
           jq '.version="'$TAG'"' package.json > package.json.new
           mv package.json.new package.json
