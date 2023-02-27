@@ -24,7 +24,9 @@ jobs:
 
       - name: Install dependencies and build 🔧
         run: |
-          jq '.version="'$(git describe --tags)'"' package.json > package.json.new
+          TAG=$(git describe --tags)
+          echo "TAG=${TAG}" >> $GITHUB_ENV
+          jq '.version="'$TAG'"' package.json > package.json.new
           mv package.json.new package.json
           npm i
 
