@@ -17,7 +17,7 @@ A [docsify.js](https://docsify.js.org) plugin for [meting-api](https://github.co
     <!-- docsify-plugin-meting-api -->
     <!-- required axios -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lisuke/docsify-plugin-meting-api/dist/docsify-plugin-meting-api.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsify-plugin-meting-api/dist/docsify-plugin-meting-api.min.js"></script>
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ window.$docsify = {
 ## Example
 
 1. Run `npm i`
-2. Run `npm run doc`
+2. Run `npm run docs`
 3. Go to [http://localhost:3000/](http://localhost:3000/)
 
 ## License

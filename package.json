@@ -1,49 +1,52 @@
 {
     "name": "docsify-plugin-meting-api",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "description": "A docsify.js plugin for meting-api.",
-    "main": "src",
-    "files": [
-        "src",
-        "dist",
-        "README.md"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/lisuke/docsify-plugin-meting-api.git"
-    },
     "author": "lisuke",
     "license": "MIT",
+    "homepage": "https://github.com/lisuke/docsify-plugin-meting-api#readme",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:lisuke/docsify-plugin-meting-api.git"
+    },
     "bugs": {
         "url": "https://github.com/lisuke/docsify-plugin-meting-api/issues"
     },
-    "homepage": "https://github.com/lisuke/docsify-plugin-meting-api#readme",
-    "dependencies": {},
+    "keywords": [
+        "docsify",
+        "docsify-plugins",
+        "plugins",
+        "APlayer",
+        "MetingAPI"
+    ],
+    "main": "dist/docsify-plugin-meting-api.js",
+    "unpkg": "dist/docsify-plugin-meting-api.min.js",
+    "files": [
+        "dist"
+    ],
     "devDependencies": {
         "docsify-cli": "latest",
         "license-checker": "latest",
         "npm-check-updates": "latest",
         "prettier": "latest",
+        "rimraf": "latest",
         "webpack": "latest",
         "webpack-cli": "latest"
     },
     "directories": {
-        "doc": "doc"
+        "docs": "docs"
     },
     "scripts": {
+        "prepare": "npm run clean && npm run build",
+        "clean": "rimraf dist/*",
         "build": "npm run build:dev && npm run build:prod",
-        "build:dev": "webpack ./src/index.js -o ./dist/ --output-filename docsify-plugin-meting-api.js --mode=development && webpack ./src/index.js -o ./doc/ --output-filename docsify-plugin-meting-api.js --mode=development",
+        "build:dev": "webpack ./src/index.js -o ./dist/ --output-filename docsify-plugin-meting-api.js --mode=development && webpack ./src/index.js -o ./docs/ --output-filename docsify-plugin-meting-api.js --mode=development",
         "build:prod": "webpack ./src/index.js -o ./dist/ --output-filename docsify-plugin-meting-api.min.js --mode=production",
-        "prettier:format": "npx prettier --write \"{,src/**/,doc/**/}*.{md,json,js,ts,html,css,scss,yml}\"",
-        "prettier:check": "npx prettier --list-different \"{,src/**/,doc/**/}*.{md,json,js,ts,html,css,scss,yml}\" ",
-        "doc": "npm run build && npx docsify serve doc --open",
+        "prettier:format": "npx prettier --write \"{,src/**/,docs/**/}*.{md,json,js,ts,html,css,scss,yml}\"",
+        "prettier:check": "npx prettier --list-different \"{,src/**/,docs/**/}*.{md,json,js,ts,html,css,scss,yml}\" ",
+        "docs": "npm run build && npx docsify serve docs --open",
         "lic-chk": "npx license-checker",
         "lib-chk": "npx ncu",
         "lib-chk-up": "npx ncu -u"
-    },
-    "keywords": [
-        "Docsify",
-        "APlayer",
-        "MetingAPI"
-    ]
+    }
 }
